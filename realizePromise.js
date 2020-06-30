@@ -50,16 +50,13 @@ class Promise {
 		this.onFulfilledCbs = [] //成功的回调函数
 		this.onRejectedCbs = [] //失败的回调函数
 
-
 		const reslove = (value) => {
 			// 调用resolve, 状态变更, 参数值需要保持才能传递
 			// 并且resolve只能调用一次, 所以还要对实例状态进行判断
 			if (this.status != STATE.pending) return;
 			this.status = STATE.fulfilled
 			this.value = value
-
 			this.onFulfilledCbs.forEach(cb => cb()) // 自动执行后面then的回调
-
 		}
 
 		const reject = (value) => {
@@ -69,9 +66,7 @@ class Promise {
 			if (this.status != STATE.pending) return;
 			this.status = STATE.rejected
 			this.reason = value
-
 			this.onRejectedCbs.forEach(cb => cb()) // 自动执行后面then的回调
-
 		}
 
 		try {
@@ -103,17 +98,10 @@ class Promise {
 				onRejected(this.reason);
 			});
 		}
-
 	}
-
-
 }
 
-
 module.exports = Promise;
-
-
-
 
 // let Promise =  require('./promise')   // 引用
 
@@ -121,12 +109,9 @@ let p = new Promise((reslove, reject) => {
 	console.log('这是我自己写的promise')
 	setTimeout(() => {
 		// 1 到 10 之间的一个随机数：
-		let num = Math.floor((Math.random() * 10) );
-		if (num > 5) {
-			reslove('成功' + num)
-		}
+		let num = Math.floor((Math.random() * 10));
+		if (num > 5) reslove('成功' + num)
 		reject('失败' + num)
-
 	}, 100)
 })
 
