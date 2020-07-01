@@ -1,0 +1,44 @@
+<!--
+ * @Author: chl
+ * @Date: 2020-07-01 10:22:09
+ * @LastEditTime: 2020-07-01 15:16:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \-demo\Message\index.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Message/index.css">
+  <link rel="stylesheet" href="./Message/iconfont.css">
+  <link rel="stylesheet" href="./Message/message.css">
+  <script src="./Message/message.js"></script>
+  <title>Message</title>
+</head>
+<body>
+  <button id="btn">弹窗消息提醒</button>
+
+  <script>
+    let btn = document.querySelector('#btn')
+    btn.addEventListener('click',()=>{
+      const message  = new  Message()
+      message.show({
+        type:'success',  // info loading success warning
+        text:'测试信息',
+        afterclose:()=>{
+          console.log('动画关闭后的回调')
+        }
+        // closeable:true,
+        // duration:200
+      })
+    })
+
+
+
+  </script>
+
+
+</body>
+</html>
