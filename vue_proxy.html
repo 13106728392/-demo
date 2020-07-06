@@ -1,0 +1,53 @@
+<!--
+ * @Author: chl
+ * @Date: 2020-07-06 10:27:17
+ * @LastEditTime: 2020-07-06 16:22:35
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \-demo\vue_proxy.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue_proxy.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model='count' />
+    <input type="button" value="增加" @click="add" />
+    <input type="button" value="减少" @click="reduce" />
+    <div v-bind="count"></div>
+      <ul>
+
+        <li v-for="item in list"></li>
+      </ul>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        count: 0,
+        list:[1,2,34,45,6,7]
+      },
+      methods: {
+        add() {
+          this.count++;
+        },
+        reduce() {
+          this.count--;
+        }
+      },
+    })
+  </script>
+
+
+
+
+</body>
+
+</html>

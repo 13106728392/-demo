@@ -1,7 +1,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-07-01 10:22:09
- * @LastEditTime: 2020-07-01 15:16:44
+ * @LastEditTime: 2020-07-01 18:07:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \-demo\Message\index.html
@@ -24,10 +24,24 @@
     let btn = document.querySelector('#btn')
     btn.addEventListener('click',()=>{
       const message  = new  Message()
-      message.show({
+
+
+
+        class b extends Message{
+          constructor(){
+            super()
+          }
+
+          show(){
+            
+          }
+        }
+
+        const bb  = new  b()
+        bb.show({
         type:'success',  // info loading success warning
         text:'测试信息',
-        afterclose:()=>{
+        afterclose:()=>{  
           console.log('动画关闭后的回调')
         }
         // closeable:true,

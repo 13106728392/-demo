@@ -1,7 +1,7 @@
 /*
  * @Author: chl
  * @Date: 2020-07-01 11:00:16
- * @LastEditTime: 2020-07-01 15:24:31
+ * @LastEditTime: 2020-07-03 11:19:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \-demo\Message\message.js
@@ -50,16 +50,14 @@ class Message {
       // 添加点击事件
       closeEl.addEventListener('click', () => {
         this.close(messageEl)
-
       })
     }
 
     this.containerEl.appendChild(messageEl)
     // 只有当duration大于0的时候才设置定时器，这样我们的消息就会一直显示
     if (duration > 0) {
-      // 用setTimeout来做一个定时器
+      // 用setTimeout来做一个定时器 
       setTimeout(() => {
-
         this.close(messageEl, afterclose);
       }, duration);
     }
@@ -84,7 +82,7 @@ class Message {
 
       // 关闭后的回调
       if ( afterclose !== null && typeof afterclose === "function") {
-           afterclose()
+        afterclose()
       }
     });
 
